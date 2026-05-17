@@ -1,0 +1,67 @@
+name: Build and Test
+
+permissions:
+  contents: write
+  packages: read
+
+# Runs on PRs to main, or manually
+on:
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/${{ github.repository }}-ci:latest
+
+    env:
+      CI_COMMIT_AUTHOR: Continuous Integration
+      DIR_REPORTS: .github/reports
+      DIR_BADGES:  .github/badges
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - name: Install project (editable)
+        run: pip install --no-deps -e .
+
+      - name: Check formatting
+        run: ruff format --check
+
+      - name: Check linting
+        run: ruff check
+
+      - name: Test
+        run: |
+          coverage run
+          coverage xml
+          coverage report | tee ${{ env.DIR_REPORTS }}/coverage.txt
+
+      - name: Profiling
+        run: |
+          python -m cProfile -o ${{ env.DIR_REPORTS }}/calculate_bounds.prof \
+            ./scripts/calculate_bounds.py \
+            --transformation ROTATE --lower 0 --upper 0.08726646259971647 \
+            --dataset MNIST --image-number 0 \
+            --padding 0 \
+            --solver SCIPY
+
+        # From: https://joht.github.io/johtizen/build/2022/01/20/github-actions-push-into-repository.html
+      - name: Update badges and reports
+        # Don't run again if last commit was already from CI bot
+        if: ${{ github.actor != 'github-actions[bot]' }}
+        run: |
+          genbadge coverage -v -i ${{ env.DIR_REPORTS }}/coverage.xml -o ${{ env.DIR_BADGES }}/coverage.svg
+
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git config user.name "${{ env.CI_COMMIT_AUTHOR }}"
+          git config user.email "$(git log -n 1 --pretty=format:%ae)"
+
+          git status
+          git add .github/badges .github/reports
+          git commit -m "Updated badges and reports" || echo "Nothing to commit"
+          git push
