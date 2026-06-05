@@ -3,7 +3,7 @@ Name                                          Stmts   Miss Branch BrPart  Cover 
 scripts/__init__.py                               0      0      0      0   100%
 scripts/calculate_bounds.py                     196      1     46      1    99%   286
 scripts/read_bounds.py                           70      0      0      0   100%
-scripts/verify_pwl.py                           159    159     32      0     0%   22-362
+scripts/verify_bounds.py                        159    159     32      0     0%   22-362
 src/vnn/__init__.py                               0      0      0      0   100%
 src/vnn/abcrown_adapter.py                       76      8     14      5    86%   143, 148, 159, 164, 166, 229-231
 src/vnn/datasets/__init__.py                     90      1     16      1    98%   154
