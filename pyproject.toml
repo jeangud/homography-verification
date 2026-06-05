@@ -1,0 +1,87 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vnn"
+version = "0.0.0"
+authors = [
+    {name = "Jean-Guillaume Durand", email = "jg.durand@jobyaviation.com"}
+]
+description = "Neural Network Verification (VNN) library"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Image Processing",
+    "Topic :: Scientific/Engineering :: Image Recognition",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Framework :: Jupyter",
+    "Framework :: Pytest",
+]
+
+dependencies = [
+    "gurobipy==11.0.0",
+    "joblib>=1.4.2",
+    "matplotlib==3.9.2",
+    "numpy==2.1.2",
+    "opencv-python>=4.10.0.84",
+    "pandas>=2.3.1",
+    "plotly>=6.6.0",
+    "pyparsing<3.3.0",  # Avoid matplotlib deprecation warnings
+    "requests>=2.32.3",
+    "onnx>=1.19.1",
+    "onnxscript>=0.5.3",
+    "scikit-learn>=1.7.2",
+    "scipy==1.14.1",
+    "torch==2.5.1",
+    "torchinfo>=1.8.0",
+    "torchvision==0.20.1",
+    "tqdm==4.66.1",
+    "auto-lirpa @ git+https://github.com/jeangud/auto_LiRPA.git@add-pwl",
+]
+
+[project.optional-dependencies]
+dev = [
+    "build>=1.2.2",
+    "coverage>=7.6.4",
+    "genbadge[all]>=1.1.1",
+    "ipykernel>=7.2.0",
+    "ipywidgets>=8.1.8",
+    "pre-commit>=4.0.0",
+    "pytest>=8.3.3",
+    "ruff>=0.7.2",
+    "snakeviz>=2.2.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/jeangud/homography-verification"
+Issues = "https://github.com/jeangud/homography-verification/issues"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[tool.coverage]
+run.branch = true
+run.command_line = "-m pytest"
+run.data_file = ".github/reports/.coverage"
+run.source = ["src", "scripts"]
+report.show_missing = true
+report.exclude_lines = [
+    "if __name__ == .__main__.",
+]
+html.directory = "./.github/reports/html"
+xml.output = "./.github/reports/coverage.xml"
+
+[tool.hatch.metadata]
+# Required for the git+https:// direct reference to auto-lirpa
+allow-direct-references = true
+
+[tool.ruff]
+target-version = "py310"

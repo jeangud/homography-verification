@@ -1,0 +1,8 @@
+# persee
+python ./scripts/calculate_bounds.py --dataset LARD --path-images-csv ./scripts/experiments/experiment_8/instances.csv --padding BORDER_REPLICATE --num-init-splits 32 --lipschitz-error 0.01 --max-bab-iter 5000 --num-jobs=-1 --transformation H_ROLL --lower 0 --upper 0.017453292519943295 && python ./scripts/calculate_bounds.py --dataset LARD --path-images-csv ./scripts/experiments/experiment_8/instances.csv --padding BORDER_REPLICATE --num-init-splits 32 --lipschitz-error 0.01 --max-bab-iter 5000 --num-jobs=-1 --transformation H_PITCH --lower 0 --upper 0.017453292519943295
+# palantir
+python ./scripts/calculate_bounds.py --dataset LARD --path-images-csv ./scripts/experiments/experiment_8/instances.csv --padding BORDER_REPLICATE --num-init-splits 32 --lipschitz-error 0.01 --max-bab-iter 5000 --num-jobs=-1 --transformation H_YAW --lower 0 --upper 0.017453292519943295
+# septoid
+python ./scripts/calculate_bounds.py --dataset LARD --path-images-csv ./scripts/experiments/experiment_8/instances.csv --padding BORDER_REPLICATE --num-init-splits 32 --lipschitz-error 0.01 --max-bab-iter 5000 --num-jobs=-1 --transformation H_X --lower 0 --upper 0.1
+# septoid-2
+python ./scripts/calculate_bounds.py --dataset LARD --path-images-csv ./scripts/experiments/experiment_8/instances.csv --padding BORDER_REPLICATE --num-init-splits 32 --lipschitz-error 0.01 --max-bab-iter 5000 --num-jobs=-1 --transformation H_Y --lower 0 --upper 0.1 && python ./scripts/calculate_bounds.py --dataset LARD --path-images-csv ./scripts/experiments/experiment_8/instances.csv --padding BORDER_REPLICATE --num-init-splits 32 --lipschitz-error 0.01 --max-bab-iter 5000 --num-jobs=-1 --transformation H_Z --lower 0 --upper 0.1

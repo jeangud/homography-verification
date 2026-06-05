@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+title: "Lipschitz Optimization for Formal Verification of Homographies"
+type: software
+license: Apache-2.0
+authors:
+  - family-names: Durand
+    given-names: Jean-Guillaume
+  - family-names: Kouvaros
+    given-names: Panagiotis
+  - family-names: Gariel
+    given-names: Maxime
+  - family-names: Lomuscio
+    given-names: Alessio
+repository-code: "https://github.com/jeangud/homography-verification"
+url: "https://github.com/jeangud/homography-verification"
+keywords:
+  - neural-network-verification
+  - formal-verification
+  - homography
+  - lipschitz-optimization
+  - computer-vision
+  - robustness
+preferred-citation:
+  type: conference-paper
+  title: "Lipschitz Optimization for Formal Verification of Homographies"
+  authors:
+    - family-names: Durand
+      given-names: Jean-Guillaume
+    - family-names: Kouvaros
+      given-names: Panagiotis
+    - family-names: Gariel
+      given-names: Maxime
+    - family-names: Lomuscio
+      given-names: Alessio
+  collection-title: "Proceedings of the Computer Vision and Pattern Recognition Conference (CVPR)"
+  year: 2026
+  url: "https://arxiv.org/abs/2310.03217"

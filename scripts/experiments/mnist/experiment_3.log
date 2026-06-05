@@ -1,0 +1,43 @@
+$ ./scripts/experiments/run_experiment_3.sh 
+2025-06-24 21:18:29,167 [INFO] calculate_bounds.py:216 - User arguments: Namespace(transformations=[<TransformType.H_ROLL: 6>], lower=[0.0], upper=[0.08726646259971647], image_number=99, dataset='MNIST', padding_value=0.0, num_samples=100, num_subdomain_samples=10, num_init_splits=124, num_splits=2, lipschitz_error=0.01, max_bab_iter=5000, load_bounds=False, num_jobs=-1, plot=False, logging='INFO')
+2025-06-24 21:18:29,167 [INFO] calculate_bounds.py:218 - Loading dataset...
+2025-06-24 21:18:29,186 [INFO] calculate_bounds.py:222 - Parsing transforms...
+2025-06-24 21:18:29,191 [INFO] calculate_bounds.py:231 - See intermediate results under /home/user/work/vnn/homography-verification/bounds/MNIST/HomographyRoll[0.00,0.09]
+2025-06-24 21:18:29,191 [INFO] calculate_bounds.py:233 - Iterating over images
+Processing image MNIST[99]: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [44:42<00:00, 26.82s/it]
+2025-06-24 22:03:11,242 [INFO] calculate_bounds.py:310 - Done. Results saved under /home/user/work/vnn/homography-verification/bounds/MNIST/HomographyRoll[0.00,0.09]
+2025-06-24 22:03:14,084 [INFO] calculate_bounds.py:216 - User arguments: Namespace(transformations=[<TransformType.H_PITCH: 7>], lower=[0.0], upper=[0.08726646259971647], image_number=99, dataset='MNIST', padding_value=0.0, num_samples=100, num_subdomain_samples=10, num_init_splits=124, num_splits=2, lipschitz_error=0.01, max_bab_iter=5000, load_bounds=False, num_jobs=-1, plot=False, logging='INFO')
+2025-06-24 22:03:14,084 [INFO] calculate_bounds.py:218 - Loading dataset...
+2025-06-24 22:03:14,090 [INFO] calculate_bounds.py:222 - Parsing transforms...
+2025-06-24 22:03:14,090 [INFO] calculate_bounds.py:231 - See intermediate results under /home/user/work/vnn/homography-verification/bounds/MNIST/HomographyPitch[0.00,0.09]
+2025-06-24 22:03:14,091 [INFO] calculate_bounds.py:233 - Iterating over images
+Processing image MNIST[99]: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [1:08:51<00:00, 41.31s/it]
+2025-06-24 23:12:05,321 [INFO] calculate_bounds.py:310 - Done. Results saved under /home/user/work/vnn/homography-verification/bounds/MNIST/HomographyPitch[0.00,0.09]
+2025-06-24 23:12:08,073 [INFO] calculate_bounds.py:216 - User arguments: Namespace(transformations=[<TransformType.H_YAW: 8>], lower=[0.0], upper=[0.08726646259971647], image_number=99, dataset='MNIST', padding_value=0.0, num_samples=100, num_subdomain_samples=10, num_init_splits=124, num_splits=2, lipschitz_error=0.01, max_bab_iter=5000, load_bounds=False, num_jobs=-1, plot=False, logging='INFO')
+2025-06-24 23:12:08,073 [INFO] calculate_bounds.py:218 - Loading dataset...
+2025-06-24 23:12:08,079 [INFO] calculate_bounds.py:222 - Parsing transforms...
+2025-06-24 23:12:08,089 [INFO] calculate_bounds.py:231 - See intermediate results under /home/user/work/vnn/homography-verification/bounds/MNIST/HomographyYaw[0.00,0.09]
+2025-06-24 23:12:08,089 [INFO] calculate_bounds.py:233 - Iterating over images
+Processing image MNIST[99]: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [1:10:19<00:00, 42.19s/it]
+2025-06-25 00:22:27,184 [INFO] calculate_bounds.py:310 - Done. Results saved under /home/user/work/vnn/homography-verification/bounds/MNIST/HomographyYaw[0.00,0.09]
+2025-06-25 00:22:29,920 [INFO] calculate_bounds.py:216 - User arguments: Namespace(transformations=[<TransformType.H_X: 9>], lower=[0.0], upper=[1.0], image_number=99, dataset='MNIST', padding_value=0.0, num_samples=100, num_subdomain_samples=10, num_init_splits=124, num_splits=2, lipschitz_error=0.01, max_bab_iter=5000, load_bounds=False, num_jobs=-1, plot=False, logging='INFO')
+2025-06-25 00:22:29,920 [INFO] calculate_bounds.py:218 - Loading dataset...
+2025-06-25 00:22:29,926 [INFO] calculate_bounds.py:222 - Parsing transforms...
+2025-06-25 00:22:29,935 [INFO] calculate_bounds.py:231 - See intermediate results under /home/user/work/vnn/homography-verification/bounds/MNIST/HomographyX[0.00,1.00]
+2025-06-25 00:22:29,936 [INFO] calculate_bounds.py:233 - Iterating over images
+Processing image MNIST[99]: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [49:22<00:00, 29.62s/it]
+2025-06-25 01:11:52,258 [INFO] calculate_bounds.py:310 - Done. Results saved under /home/user/work/vnn/homography-verification/bounds/MNIST/HomographyX[0.00,1.00]
+2025-06-25 01:11:55,010 [INFO] calculate_bounds.py:216 - User arguments: Namespace(transformations=[<TransformType.H_Y: 10>], lower=[0.0], upper=[1.0], image_number=99, dataset='MNIST', padding_value=0.0, num_samples=100, num_subdomain_samples=10, num_init_splits=124, num_splits=2, lipschitz_error=0.01, max_bab_iter=5000, load_bounds=False, num_jobs=-1, plot=False, logging='INFO')
+2025-06-25 01:11:55,010 [INFO] calculate_bounds.py:218 - Loading dataset...
+2025-06-25 01:11:55,016 [INFO] calculate_bounds.py:222 - Parsing transforms...
+2025-06-25 01:11:55,017 [INFO] calculate_bounds.py:231 - See intermediate results under /home/user/work/vnn/homography-verification/bounds/MNIST/HomographyY[0.00,1.00]
+2025-06-25 01:11:55,017 [INFO] calculate_bounds.py:233 - Iterating over images
+Processing image MNIST[99]: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [2:26:58<00:00, 88.19s/it]
+2025-06-25 03:38:53,927 [INFO] calculate_bounds.py:310 - Done. Results saved under /home/user/work/vnn/homography-verification/bounds/MNIST/HomographyY[0.00,1.00]
+2025-06-25 03:38:56,678 [INFO] calculate_bounds.py:216 - User arguments: Namespace(transformations=[<TransformType.H_Z: 11>], lower=[0.0], upper=[1.0], image_number=99, dataset='MNIST', padding_value=0.0, num_samples=100, num_subdomain_samples=10, num_init_splits=124, num_splits=2, lipschitz_error=0.01, max_bab_iter=5000, load_bounds=False, num_jobs=-1, plot=False, logging='INFO')
+2025-06-25 03:38:56,678 [INFO] calculate_bounds.py:218 - Loading dataset...
+2025-06-25 03:38:56,684 [INFO] calculate_bounds.py:222 - Parsing transforms...
+2025-06-25 03:38:56,684 [INFO] calculate_bounds.py:231 - See intermediate results under /home/user/work/vnn/homography-verification/bounds/MNIST/HomographyZ[0.00,1.00]
+2025-06-25 03:38:56,684 [INFO] calculate_bounds.py:233 - Iterating over images
+Processing image MNIST[99]: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [39:33<00:00, 23.74s/it]
+2025-06-25 04:18:30,189 [INFO] calculate_bounds.py:310 - Done. Results saved under /home/user/work/vnn/homography-verification/bounds/MNIST/HomographyZ[0.00,1.00]

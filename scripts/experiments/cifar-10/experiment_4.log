@@ -1,0 +1,68 @@
+$ ./scripts/experiments/run_experiment_4.sh
+2025-06-25 06:01:56,707 [INFO] calculate_bounds.py:216 - User arguments: Namespace(transformations=[<TransformType.H_ROLL: 6>], lower=[0.0], upper=[0.08726646259971647], image_number=99, dataset='CIFAR10', padding_value=0.0, num_samples=100, num_subdomain_samples=10, num_init_splits=124, num_splits=2, lipschitz_error=0.01, max_bab_iter=5000, load_bounds=False, num_jobs=-1, plot=False, logging='INFO')
+2025-06-25 06:01:56,707 [INFO] calculate_bounds.py:218 - Loading dataset...
+Files already downloaded and verified
+2025-06-25 06:01:57,224 [INFO] calculate_bounds.py:222 - Parsing transforms...
+2025-06-25 06:01:57,225 [INFO] calculate_bounds.py:231 - See intermediate results under /home/user/work/vnn/homography-verification/bounds/CIFAR10/HomographyRoll[0.00,0.09]
+2025-06-25 06:01:57,225 [INFO] calculate_bounds.py:233 - Iterating over images
+Processing image CIFAR10[30]:  30%|█████████████████████████████████████████████████▌                                                                                                                   | 30/100 [1:57:47<4:31:32, 232.76s/it]Processing image CIFAR10[30]:  30%|█████████████████████████████████████████████████▌                                                                                                                   | 30/100 [1:59:44<4:39:23, 239.47s/it]
+Traceback (most recent call last):
+  File "/home/user/work/vnn/homography-verification/./scripts/calculate_bounds.py", line 314, in <module>
+    main(sys.argv)
+  File "/home/user/work/vnn/homography-verification/./scripts/calculate_bounds.py", line 265, in main
+    bounds = calculate_bounds(
+  File "/home/user/work/vnn/homography-verification/src/vnn/pwl.py", line 88, in calculate_bounds
+    lb_pwl_sound = shift_pwl_bound(
+  File "/home/user/work/vnn/homography-verification/src/vnn/pwl.py", line 422, in shift_pwl_bound
+    results = Parallel(n_jobs=num_jobs)(
+  File "/home/user/.local/lib/python3.10/site-packages/joblib/parallel.py", line 2007, in __call__
+    return output if self.return_generator else list(output)
+  File "/home/user/.local/lib/python3.10/site-packages/joblib/parallel.py", line 1650, in _get_outputs
+    yield from self._retrieve()
+  File "/home/user/.local/lib/python3.10/site-packages/joblib/parallel.py", line 1762, in _retrieve
+    time.sleep(0.01)
+KeyboardInterrupt
+2025-06-25 08:01:43,199 [INFO] calculate_bounds.py:216 - User arguments: Namespace(transformations=[<TransformType.H_PITCH: 7>], lower=[0.0], upper=[0.08726646259971647], image_number=99, dataset='CIFAR10', padding_value=0.0, num_samples=100, num_subdomain_samples=10, num_init_splits=124, num_splits=2, lipschitz_error=0.01, max_bab_iter=5000, load_bounds=False, num_jobs=-1, plot=False, logging='INFO')
+2025-06-25 08:01:43,199 [INFO] calculate_bounds.py:218 - Loading dataset...
+Files already downloaded and verified
+2025-06-25 08:01:43,612 [INFO] calculate_bounds.py:222 - Parsing transforms...
+2025-06-25 08:01:43,613 [INFO] calculate_bounds.py:231 - See intermediate results under /home/user/work/vnn/homography-verification/bounds/CIFAR10/HomographyPitch[0.00,0.09]
+2025-06-25 08:01:43,613 [INFO] calculate_bounds.py:233 - Iterating over images
+Processing image CIFAR10[0]:   0%|                                                                                                                                                                                    | 0/100 [00:00<?, ?it/s]Processing image CIFAR10[0]:   0%|                                                                                                                                                                                    | 0/100 [00:38<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/user/work/vnn/homography-verification/./scripts/calculate_bounds.py", line 314, in <module>
+    main(sys.argv)
+  File "/home/user/work/vnn/homography-verification/./scripts/calculate_bounds.py", line 265, in main
+    bounds = calculate_bounds(
+  File "/home/user/work/vnn/homography-verification/src/vnn/pwl.py", line 47, in calculate_bounds
+    lb_sound = shift_linear_bound(
+  File "/home/user/work/vnn/homography-verification/src/vnn/pwl.py", line 262, in shift_linear_bound
+    results = Parallel(n_jobs=num_jobs)(
+  File "/home/user/.local/lib/python3.10/site-packages/joblib/parallel.py", line 2007, in __call__
+    return output if self.return_generator else list(output)
+  File "/home/user/.local/lib/python3.10/site-packages/joblib/parallel.py", line 1650, in _get_outputs
+    yield from self._retrieve()
+  File "/home/user/.local/lib/python3.10/site-packages/joblib/parallel.py", line 1762, in _retrieve
+    time.sleep(0.01)
+KeyboardInterrupt
+^CTraceback (most recent call last):
+  File "/home/user/work/vnn/homography-verification/./scripts/calculate_bounds.py", line 10, in <module>
+    import matplotlib
+  File "/home/user/.local/lib/python3.10/site-packages/matplotlib/__init__.py", line 159, in <module>
+    from . import _api, _version, cbook, _docstring, rcsetup
+  File "/home/user/.local/lib/python3.10/site-packages/matplotlib/cbook.py", line 24, in <module>
+    import numpy as np
+  File "/home/user/.local/lib/python3.10/site-packages/numpy/__init__.py", line 181, in <module>
+    from . import lib
+  File "/home/user/.local/lib/python3.10/site-packages/numpy/lib/__init__.py", line 32, in <module>
+    from . import _arraysetops_impl
+  File "/home/user/.local/lib/python3.10/site-packages/numpy/lib/_arraysetops_impl.py", line 392, in <module>
+    class UniqueAllResult(NamedTuple):
+  File "/home/user/miniconda3/envs/vbl/lib/python3.10/typing.py", line 2279, in __new__
+    nm_tpl = _make_nmtuple(typename, types.items(),
+  File "/home/user/miniconda3/envs/vbl/lib/python3.10/typing.py", line 2251, in _make_nmtuple
+    nm_tpl = collections.namedtuple(name, fields,
+  File "/home/user/miniconda3/envs/vbl/lib/python3.10/collections/__init__.py", line 414, in namedtuple
+    __new__ = eval(code, namespace)
+  File "<string>", line 1, in <module>
+KeyboardInterrupt

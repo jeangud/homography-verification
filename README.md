@@ -10,8 +10,8 @@
       <a href="https://github.com/jeangud/homography-verification">
          <img src="https://img.shields.io/badge/GitHub-homography--verification-lightgray.svg?logo=github" alt="Code link"></a>
       &nbsp;
-      <a href="https://github.com/jeangud/vbl-verification/actions/workflows/build-and-test.yml">
-         <img src="https://github.com/jeangud/vbl-verification/actions/workflows/build-and-test.yml/badge.svg" alt="Build and Test"></a>
+      <a href="https://github.com/jeangud/homography-verification/actions/workflows/build-and-test.yml">
+         <img src="https://github.com/jeangud/homography-verification/actions/workflows/build-and-test.yml/badge.svg" alt="Build and Test"></a>
       &nbsp;
       <a href=".github/reports/coverage.txt"><img src=".github/badges/coverage.svg" alt="Test coverage"></a>
       &nbsp;
@@ -39,11 +39,8 @@
    </h2>
 </p>
 
-> [!NOTE]
-> 🚧 **Code coming soon** — around CVPR 2026.
-
 <p align="center">
-   <img src=".github/assets/geometry.svg" alt="Geometry of vision-based landing" />
+   <img src=".github/assets/geometry.svg" alt="Example homography in autonomous driving" />
    <br>
    Deploying vision neural networks in safety-critical domains requires formal robustness guarantees, but current verifiers struggle with 3D camera motion. In this repository, we calculate tight piecewise-linear bounds on pixel values for 3D geometric perturbations. These bounds can then be used in complete verifiers such as <a href="https://github.com/vas-group-imperial/venus2">VENUS</a>.
 </p>
@@ -81,7 +78,7 @@ From the root directory of the repository:
 pip install .
 ```
 
-Some of the figures render better with a [$\LaTeX$ installation](https://www.latex-project.org/get/).
+Some of the figures render better with a $\LaTeX$ [installation](https://www.latex-project.org/get/).
 
 ## 🚀 Usage
 > ℹ️ The current implementation runs in 4 minutes on a 32x32 image.
@@ -115,7 +112,7 @@ To view all the possible script options: `python ./scripts/calculate_bounds.py -
 2025-01-03 06:06:49,524 [INFO] calculate_bounds.py:189 - Processing image MNIST[6]
 2025-01-03 06:06:49,524 [INFO] calculate_bounds.py:189 - Processing image MNIST[7]
 100%|███████████████████████████████████████████████████████████████████████████| 8/8 [00:00<00:00, 14357.91it/s]
-2025-01-03 06:06:49,524 [INFO] calculate_bounds.py:263 - Done. Results saved under /home/john.doe/work/vnn/vbl-verification/bounds/MNIST/Rotation(14.0,14.0)[0.00,0.25]
+2025-01-03 06:06:49,524 [INFO] calculate_bounds.py:263 - Done. Results saved under /home/user/work/vnn/homography-verification/bounds/MNIST/Rotation(14.0,14.0)[0.00,0.25]
 ```
 </details>
 
@@ -145,10 +142,10 @@ scripts/calculate_bounds.py --transformation H_YAW --lower 0 --upper 0.349 --dat
 2025-01-03 12:28:50,516 [INFO] utils.py:95 - Adjusting to sound piecewise-linear (PWL) bounds
 2025-01-03 12:29:57,605 [INFO] utils.py:95 - Time elapsed: 67.09 seconds
 2025-01-03 12:30:56,781 [INFO] utils.py:95 - Time elapsed: 59.18 seconds
-2025-01-03 12:30:56,782 [INFO] utils.py:95 - Saving bounds to /home/jg.durand/work/vnn/vbl-verification/bounds/LARD/Homography[0.00,0.35]/0/bounds.pkl
+2025-01-03 12:30:56,782 [INFO] utils.py:95 - Saving bounds to /home/user/work/vnn/homography-verification/bounds/LARD/Homography[0.00,0.35]/0/bounds.pkl
 2025-01-03 12:30:56,783 [INFO] utils.py:95 - Plotting bounds for all pixels
 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [10:12<00:00, 612.09s/it]
-2025-01-03 12:36:31,882 [INFO] calculate_bounds.py:252 - Done. Results saved under /home/john.doe/work/vnn/vbl-verification/bounds/LARD/Homography[0.00,0.35]
+2025-01-03 12:36:31,882 [INFO] calculate_bounds.py:252 - Done. Results saved under /home/user/work/vnn/homography-verification/bounds/LARD/Homography[0.00,0.35]
 ```
 
 </details>
@@ -191,6 +188,8 @@ Summary:
 You can run the experiments scripts under [./scripts/experiments](./scripts/experiments/).
 
 ## 💾 Bounds format
+> ℹ️ See [`scripts/read_bounds.py`](./scripts/read_bounds.py) to load and visualize bounds.
+
 The computed bounds are saved as a pickled dictionary with the following structure:
 
 ```python
@@ -208,4 +207,19 @@ bounds[method][soundness][bound_type][i][j] # Bounds for pixel (i, j)
 - **Linear bounds** are stored as `[slope, intercept]`, representing the line $y = \text{slope} \cdot \kappa + \text{intercept}$ over the full parameter interval.
 - **Piecewise-linear (PWL) bounds** are stored as an array of segments `[slope, intercept, start, end]`, each defining a line $y = \text{slope} \cdot \kappa + \text{intercept}$ valid on the sub-interval $[\text{start}, \text{end}]$.
 
-See [`scripts/read_bounds.py`](./scripts/read_bounds.py) for an example of how to load and visualize the bounds.
+## 📚 Datasets
+This project provides loaders for several publicly available datasets but does
+not host or distribute them, vouch for their quality or fairness, or grant any
+right to use them. It is your responsibility to determine whether you have
+permission to use each dataset under its own license.
+
+| Dataset    | Source                                                |
+|------------|-------------------------------------------------------|
+| MNIST      | http://yann.lecun.com/exdb/mnist/                     |
+| CIFAR-10   | https://www.cs.toronto.edu/~kriz/cifar.html           |
+| GTSRB      | https://benchmark.ini.rub.de/gtsrb_dataset.html       |
+| MetaRoom   | https://sites.google.com/view/metaroom-dataset/home   |
+| LARD       | https://github.com/deel-ai/LARD                       |
+
+## 📜 License
+This project is licensed under the [Apache License, Version 2.0](./LICENSE).

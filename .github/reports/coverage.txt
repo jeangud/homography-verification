@@ -2,10 +2,11 @@ Name                                          Stmts   Miss Branch BrPart  Cover 
 -----------------------------------------------------------------------------------------
 scripts/__init__.py                               0      0      0      0   100%
 scripts/calculate_bounds.py                     196      1     46      1    99%   286
-scripts/plot_transform.py                        43     43      0      0     0%   1-87
 scripts/read_bounds.py                           70      0      0      0   100%
+scripts/verify_pwl.py                           159    159     32      0     0%   22-362
 src/vnn/__init__.py                               0      0      0      0   100%
-src/vnn/datasets/__init__.py                     88      0     14      0   100%
+src/vnn/abcrown_adapter.py                       76      8     14      5    86%   143, 148, 159, 164, 166, 229-231
+src/vnn/datasets/__init__.py                     90      1     16      1    98%   154
 src/vnn/linear_programming.py                    49     14     12      1    69%   31, 70-100
 src/vnn/pwl.py                                  168      0     46      0   100%
 src/vnn/transforms/__init__.py                   15      0      0      0   100%
@@ -29,4 +30,4 @@ src/vnn/transforms/translate_y.py                26      0      0      0   100%
 src/vnn/utils.py                                 71     12     14      0    84%   65-74, 77, 91-95
 src/vnn/visualization.py                        196      0      8      0   100%
 -----------------------------------------------------------------------------------------
-TOTAL                                          1441     70    166      3    95%
+TOTAL                                          1635    195    214      9    87%

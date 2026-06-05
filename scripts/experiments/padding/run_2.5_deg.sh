@@ -1,0 +1,5 @@
+python ./scripts/calculate_bounds.py --dataset CIFAR10 --image-number 100 --lipschitz-error 0.01 --max-bab-iter 5000 --num-jobs=-1 --transformation H_YAW --lower 0 --upper 0.08726646259971647 --padding 0
+python ./scripts/calculate_bounds.py --dataset CIFAR10 --image-number 100 --lipschitz-error 0.01 --max-bab-iter 5000 --num-jobs=-1 --transformation H_YAW --lower 0 --upper 0.08726646259971647 --padding 0.5  # palantir
+python ./scripts/calculate_bounds.py --dataset CIFAR10 --image-number 100 --lipschitz-error 0.01 --max-bab-iter 5000 --num-jobs=-1 --transformation H_YAW --lower 0 --upper 0.08726646259971647 --padding BORDER_REPLICATE  # septoid
+python ./scripts/calculate_bounds.py --dataset CIFAR10 --image-number 100 --lipschitz-error 0.01 --max-bab-iter 5000 --num-jobs=-1 --transformation H_YAW --lower 0 --upper 0.08726646259971647 --padding BORDER_REFLECT  # chopper
+python ./scripts/calculate_bounds.py --dataset CIFAR10 --image-number 100 --lipschitz-error 0.01 --max-bab-iter 5000 --num-jobs=-1 --transformation H_YAW --lower 0 --upper 0.08726646259971647 --padding BORDER_WRAP # septoid-1
